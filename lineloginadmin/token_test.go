@@ -1,4 +1,4 @@
-package lineloginadminsdk
+package lineloginadmin
 
 import (
 	"testing"
@@ -36,7 +36,7 @@ func TestVerifyIDToken(t *testing.T) {
 	for _, data := range IDTestData {
 		var err error
 
-		if _,err = VerifyIDToken(data.IDToken, data.ChannelID); err != nil {
+		if _, err = VerifyIDToken(data.IDToken, data.ChannelID); err != nil {
 			t.Errorf("Unable to verify accesstoken: %v", err)
 		}
 
