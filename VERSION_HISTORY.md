@@ -1,6 +1,12 @@
 # Version History
 
 
+## `Version 0.2.2`
+Released: `2022-04-04`
+- Change Types Models
+## `Version 0.2.1`
+Released: `2022-04-04`
+- bugfix and refactoring
 ## `Version 0.2.0`
 Released: `2022-04-04`
 ## Improve:

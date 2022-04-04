@@ -24,7 +24,7 @@ func TestVerifyAccessToken(t *testing.T) {
 	for _, data := range AccessTokenTestData {
 		var err error
 
-		if err = VerifyAccessToken(data.accessToken); err != nil {
+		if _,err = VerifyAccessToken(data.accessToken); err != nil {
 			t.Errorf("Unable to verify accesstoken: %v", err)
 		}
 

@@ -6,7 +6,7 @@ import (
 	"github.com/valyala/fasthttp"
 )
 
-func Get(uri string) error {
+func Get(uri string) ([]byte, error) {
 	req := fasthttp.AcquireRequest()
 	defer fasthttp.ReleaseRequest(req)
 	req.SetRequestURI(uri)
@@ -18,17 +18,15 @@ func Get(uri string) error {
 	err := fasthttp.Do(req, resp)
 	if err != nil {
 		fmt.Printf("Client get failed: %s\n", err)
-		return err
+		return nil, err
 	}
 	if resp.StatusCode() != fasthttp.StatusOK {
 		fmt.Printf("Expected status code %d but got %d\n", fasthttp.StatusOK, resp.StatusCode())
-		return err
+		return nil, err
 	}
 	body := resp.Body()
 
-	fmt.Printf("Response body is: %s", body)
-
-	return nil
+	return body, nil
 
 }
 
