@@ -1,4 +1,4 @@
-package lineloginadminsdk
+package models
 
 type AccessTokenVerify struct {
 	ClientID  string `json:"client_id"`
@@ -14,5 +14,5 @@ type IDTokenVerify struct {
 	Name    string   `json:"name"`
 	Picture string   `json:"picture"`
 	Amr     []string `json:"amr"`
-	email string `json:"email"`
+	Email string `json:"email"`
 }

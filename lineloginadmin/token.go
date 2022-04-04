@@ -1,10 +1,11 @@
-package lineloginadminsdk
+package lineloginadmin
 
 import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/StandUpCode/LineLoginAdminSDK/utils"
+	"github.com/StandUpCode/LineLoginAdminSDK/lineloginadmin/models"
+	"github.com/StandUpCode/LineLoginAdminSDK/lineloginadmin/utils"
 )
 
 func VerifyAccessToken(accessToken string) error {
@@ -20,7 +21,7 @@ func VerifyAccessToken(accessToken string) error {
 
 }
 
-func VerifyIDToken(IDToken , ChannelID string) (*IDTokenVerify, error){
+func VerifyIDToken(IDToken , ChannelID string) (*models.IDTokenVerify, error){
 
 	uri := "https://api.line.me/oauth2/v2.1/verify"
 	payload := fmt.Sprintf("id_token=%s&client_id=%s", IDToken, ChannelID)
@@ -31,7 +32,7 @@ func VerifyIDToken(IDToken , ChannelID string) (*IDTokenVerify, error){
 	if err != nil {
 		panic(err)
 	}
-	verify_response := IDTokenVerify{}
+	verify_response := models.IDTokenVerify{}
 	err = json.Unmarshal(result, &verify_response)
 	if err != nil {
 		//fmt.Printf("Error: %s", err)

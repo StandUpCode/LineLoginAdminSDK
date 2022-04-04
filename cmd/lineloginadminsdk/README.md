@@ -1,2 +1,0 @@
-`LineLoginAdminSDK` command-line tool
-=======================
