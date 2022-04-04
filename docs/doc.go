@@ -1,4 +1,4 @@
-package lineloginadminsdk
+package docs
 
 import (
 	"fmt"
