@@ -49,8 +49,15 @@ func Post(uri string, payload string, content_type string) ([]byte, error) {
 		fmt.Printf("Client get failed: %s\n", err)
 		return nil, err
 	}
+
+	if resp.StatusCode() != fasthttp.StatusOK {
+		fmt.Printf("Expected status code %d but got %d\n", fasthttp.StatusOK, resp.StatusCode())
+		return nil, err
+	}
+
 	body := resp.Body()
-	fmt.Printf("Response body is: %s", body)
+
+	// fmt.Printf("Response body is: %s", body)
 
 	return body, nil
 
