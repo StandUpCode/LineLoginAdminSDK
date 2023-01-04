@@ -1,5 +1,10 @@
 # Version History
 
+## `Version 0.3.2`
+
+Released: `2023-01-05`
+
+- Add Error handling
 
 ## `Version 0.2.2`
 Released: `2022-04-04`
